@@ -1,4 +1,7 @@
 package Toppings;
 
-public class Meat {
+public class Meat extends Toppings {
+    public Meat(String name) {
+        super(name);
+    }
 }

@@ -1,4 +1,12 @@
 package Toppings;
 
-public class Vegetable {
+public class Vegetable extends Toppings {
+
+    public <size> void getPrice(size){
+
+    }
+
+    public Vegetable(String name) {
+        super(name);
+    }
 }
