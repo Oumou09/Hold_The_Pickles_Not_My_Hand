@@ -1,4 +1,4 @@
 package Sandwiches;
 
-public class Meat {
+public class Chip {
 }
