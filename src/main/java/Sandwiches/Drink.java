@@ -28,23 +28,9 @@ public class Drink {
 
 
 
-
-
-
-
-
-
-
-
-
-
-    public static void getPrice(){
+    public double getPrice(){
 
     }
-
-
-
-
 
 
 

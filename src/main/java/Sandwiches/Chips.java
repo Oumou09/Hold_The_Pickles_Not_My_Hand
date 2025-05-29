@@ -1,9 +1,9 @@
 package Sandwiches;
 
-public class Chip {
+public class Chips {
     private String type;
 
-    public Chip(String type) {
+    public Chips(String type) {
         this.type = type;
     }
 
@@ -15,11 +15,13 @@ public class Chip {
         this.type = type;
     }
 
+    @Override
+    public String toString() {
+        return "Chips" +
+                "type='" + type + '\'';
+    }
 
-
-
-    public static void getPrice(){
-
-        return 1.5;
+    public double getPrice(){
+       return 1.5;
     }
 }

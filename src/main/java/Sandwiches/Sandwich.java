@@ -1,6 +1,6 @@
 package Sandwiches;
 
-import Toppings.Toppings;
+import Menu.Topping;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +11,7 @@ public class Sandwich {
     private boolean isToasted;
     private boolean extraCheese;
     private boolean extraMeat;
-    private List<Toppings> toppings;
+    private List<Topping> toppings;
 
 
     public Sandwich(String bread, int size, boolean isToasted, boolean extraCheese, boolean extraMeat) {
@@ -64,16 +64,24 @@ public class Sandwich {
     }
 
 
-    public getSides(){
-
-    }
-    public double calculatedPrize(){
-
-    }
-    public addToppins(){
+    public double calculatedPrice(){
 
     }
 
+    public void addTopping(Topping topping){
+        toppings.add(topping);
+    }
 
 
+    @Override
+    public String toString() {
+        return "Sandwich{" +
+                "bread='" + bread + '\'' +
+                ", size=" + size +
+                ", isToasted=" + isToasted +
+                ", extraCheese=" + extraCheese +
+                ", extraMeat=" + extraMeat +
+                ", toppings=" + toppings +
+                '}';
+    }
 }

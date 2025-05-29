@@ -1,9 +1,9 @@
-package Toppings;
+package Menu;
 
-public abstract class Toppings {
+public abstract class Topping {
     private String name;
 
-    public Toppings(String name) {
+    public Topping(String name) {
         this.name = name;
     }
 
@@ -16,7 +16,8 @@ public abstract class Toppings {
     }
 
 
-    public <size> getPrice(size){
+   public abstract double getPrice(int size);
 
-    }
+
+
 }

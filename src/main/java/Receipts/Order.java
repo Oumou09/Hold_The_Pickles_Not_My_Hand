@@ -1,45 +1,47 @@
 package Receipts;
 
-import Sandwiches.Chip;
+import Sandwiches.Chips;
 import Sandwiches.Drink;
-import Sandwiches.Sandwich;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
-    private List<Sandwich> sandwiches;
+    private List<Object> sandwiches;
     private List<Drink> drinks;
-    private List<Chip> Chips;
+    private List<Chips> chips;
 
-    public Order(List<Sandwich> sandwiches, List<Drink> drinks, List<Chip> chips) {
-        this.sandwiches = new ArrayList<>();
+    public Order() {
+        this.sandwiches = new ArrayList<Object>();
         this.drinks = new ArrayList<>();
-       this.Chips = new ArrayList<>();
+       this.chips = new ArrayList<>();
     }
 
 
-    public List<Sandwich> getSandwiches() {
+    public List<Object> getSandwiches() {
         return sandwiches;
     }
 
-    public void setSandwiches(List<Sandwich> sandwiches) {
-        this.sandwiches = sandwiches;
-    }
+
+
+
 
     public List<Drink> getDrinks() {
         return drinks;
     }
 
-    public void setDrinks(List<Drink> drinks) {
-        this.drinks = drinks;
+
+
+    public List<Chips> getChips() {
+        return chips;
     }
 
-    public List<Chip> getChips() {
-        return Chips;
+
+    public void newSandwich(sandwiches sandwich){
+        sandwiches.add(sandwich);
+
     }
 
-    public void setChips(List<Chip> chips) {
-        Chips = chips;
-    }
+
+
 }
