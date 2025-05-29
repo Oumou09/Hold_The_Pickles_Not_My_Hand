@@ -1,7 +1,8 @@
-package Receipts;
+package orderDetails;
 
 import Sandwiches.Chips;
 import Sandwiches.Drink;
+import Sandwiches.Sandwich;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,7 +38,7 @@ public class Order {
     }
 
 
-    public void newSandwich(sandwiches sandwich){
+    public void newSandwich(Sandwich sandwich){
         sandwiches.add(sandwich);
 
     }

@@ -1,6 +1,7 @@
 package com.pluralsight.capstone2;
 
-import Receipts.Order;
+import Menu.Bread;
+import orderDetails.Order;
 import Sandwiches.Sandwich;
 import Menu.Meat;
 
@@ -67,15 +68,47 @@ public class UserInterface {
 
     }
 
+    public void processBreadTypeRequest(){
+        System.out.println("Please choose your bread type: White, Rye, Wheat, Wrap");
+        String breadChoice = scanner.nextLine();
+        if(breadChoice.equalsIgnoreCase("White")){
+            System.out.println("Selected bread choice is:" + breadChoice.toUpperCase());
+            Sandwich.addTopping(new Bread(breadChoice));
+
+        } else if (breadChoice.equalsIgnoreCase("Rye")) {
+            System.out.println("Selected bread choice is: " + breadChoice.toUpperCase());
+            Sandwich.addTopping(new Bread(breadChoice));
+
+        } else if (breadChoice.equalsIgnoreCase("Wheat")) {
+            System.out.println("Selected bread choice is:" + breadChoice.toUpperCase());
+            Sandwich.addTopping(new Bread(breadChoice));
+
+        } else if (breadChoice.equalsIgnoreCase("Wrap")) {
+            System.out.println("Selected bread choice is:" + breadChoice.toUpperCase());
+            Sandwich.addTopping(new Bread(breadChoice));
+        }else if (breadChoice.equalsIgnoreCase("")){
+            System.out.println("Invalid Input please choose from the four available types of bread available");
+        }else {
+            System.out.println("The selected bread type is not available at the moment!");
+
+        }
+
+
+
+    }
+
+    public void processMeatChoiceRequest(){
+        Meat meat = new Meat("") ;
+        String meatChoice = scanner.nextLine();
+
+    }
+
     public void processCreateNewSandwichRequest(){
-        Order order = new Order();
-        order.getSandwiches();
         System.out.println("What type of bread would you like? ");
         scanner.nextLine();
-        String meatName = "Steak";
+        String breadType = "Steak";
 
-        Sandwich sandwiches;
-        sandwiches.addTopping(new Meat(meatName));
+        Sandwich.addTopping(new Meat(breadType));
 
     }
     public void processAddSandwichRequest(){

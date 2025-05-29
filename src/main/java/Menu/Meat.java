@@ -14,7 +14,7 @@ public class Meat extends Topping {
     public double getPrice(int size) {
         double totalPrice = 0;
         if (size == 4) {
-            totalPrice = 1.00;
+            totalPrice = 0.50/4;
 
             return totalPrice + 1.00;
         }

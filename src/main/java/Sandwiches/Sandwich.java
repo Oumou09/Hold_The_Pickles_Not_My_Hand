@@ -65,10 +65,11 @@ public class Sandwich {
 
 
     public double calculatedPrice(){
+        return calculatedPrice();
 
     }
 
-    public void addTopping(Topping topping){
+    public static void addTopping(Topping topping){
         toppings.add(topping);
     }
 
