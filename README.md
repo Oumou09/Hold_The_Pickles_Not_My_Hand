@@ -1,21 +1,88 @@
-# Project Title
+# Hold The Pickles Not My Hand
 
 ## Description of the Project
 
-Briefly describe what this Java console application does. Mention its purpose and who the intended users are. Explain the main functionality and what problems it aims to solve.
+Brief Description:
+This Java console application is a sandwich shop ordering system designed to help customers and shop employees place, manage, and save sandwich, drink, and chip orders. 
+The application simulates a point-of-sale (POS) system that operates entirely through a text-based interface, where users can build customized sandwiches, select drinks and chips, and generate receipts.
 
-![Class Diagram](path/to/your/class_diagram.png)
-
+Screenshot 2025-05-23 at 4.02.18 PM
+![Screenshot 2025-05-23 at 4.02.18 PM.png](../../../../Downloads/Screenshot%202025-05-23%20at%204.02.18%E2%80%AFPM.png)
+![Screenshot 2025-05-26 at 4.24.31 PM.png](../../../../Downloads/Screenshot%202025-05-26%20at%204.24.31%E2%80%AFPM.png)
 ## User Stories
 
-List the user stories that guided the development of your application. Format these stories as: "As a [type of user], I want [some goal] so that [some reason]."
-
-- As a user, I want to be able to input my data, so that the application can process it accordingly.
-- As a user, I want to receive immediate feedback, so I can understand what to do next.
+- As a customer, I want to choose a sandwich size (4", 8", or 12") so that my sandwich fits my appetite.
+- As a customer, I want to choose a bread type so that I get the texture I like (white, wheat, rye, wrap).
+- As a customer, I want to add regular and premium toppings so I can customize my sandwich.
+- As a customer, I want to select “extra” for any topping so that I can double up on flavor.
+- As a customer, I want to place an order with multiple sandwiches so I can feed myself (or others).
+- As a customer, I want a receipt showing what I ordered and how much I paid so that I can review my purchase.
+- As a customer, I want to request that my sandwich be toasted so I can get it warm and crispy.
 
 ## Setup
 
-Instructions on how to set up and run the project using IntelliJ IDEA.
+## How to Set Up Your Java Console Application in IntelliJ
+
+###  Install IntelliJ IDEA
+
+* If you haven’t already, download and install **IntelliJ IDEA Community Edition** (free) from [JetBrains](https://www.jetbrains.com/idea/download/).
+
+---
+
+# Create a New Project
+
+1. Open IntelliJ IDEA.
+2. Click **New Project**.
+3. Select **Java** (use the default SDK; if none is available, download one when prompted).
+4. Click **Next**.
+5. Choose **Create Project from Template** (optional; generally skip unless you want a Hello World example).
+6. Name your project (e.g., `SandwichShopApp`) and set a location on your computer.
+7. Click **Finish**.
+
+---
+
+# Set Up Your Source Folders
+
+1. In the **Project** view (left sidebar), right-click the `src` folder and choose **New > Package**.
+2. Name your package (e.g., `com.sandwichshop`).
+
+
+ Add Your Classes
+
+1. Right-click your package (e.g., `com.sandwichshop`) and choose **New > Java Class**.
+2. Create your classes (e.g., `Main`, `Order`, `Sandwich`, `Drink`, `OrderFileManager`, etc.).
+3. Paste your existing code into the appropriate classes.
+
+---
+
+### 5️⃣ Write Your Main Method
+
+Make sure you have a class with a `main` method, like this:
+
+```java
+
+Build and Run the Application
+
+1. Click the **Build Project** hammer icon (or press `Ctrl+F9`).
+2. Click the **Run** button (green triangle) next to the `main()` method or use the top Run menu.
+3. The console at the bottom will display your program output.
+
+ Optional: Use Git (Version Control)
+
+1. If you want to save your progress and collaborate:
+
+    * Right-click your project root and select **Git > Enable Version Control Integration**.
+    * Choose **Git** and click **OK**.
+    * Use the **Commit** and **Push** buttons to manage your repository.
+    * (Optional) Connect to GitHub via the **GitHub** integration in IntelliJ.
+
+
+Tips & Troubleshooting
+
+- Make sure your `JAVA_HOME` is set properly in your system. 
+- Check that your project SDK matches the Java version you want to use. 
+- If you get file errors (e.g., `FileNotFoundException`), check that you have write permissions in your project folder.
+
 
 ### Prerequisites
 
@@ -39,33 +106,28 @@ Follow these steps to get your application running within IntelliJ IDEA:
 
 ## Demo
 
-Include screenshots or GIFs that show your application in action. Use tools like [Giphy Capture](https://giphy.com/apps/giphycapture) to record a GIF of your application.
-
-![Application Screenshot](path/to/your/screenshot.png)
 
 ## Future Work
 
-Outline potential future enhancements or functionalities you might consider adding:
+1. User Authentication & Roles
+Add simple login/logout functionality for customers and staff.
 
-- Additional feature to be developed.
-- Improvement of current functionalities.
+Implement role-based access control: staff can manage orders, customers can only place orders.
 
+2. Order History & Tracking
+- Store each customer's past orders
+- Allow customers to view or reorder previous orders.
+- Let staff review and manage all historical orders.
 ## Resources
-
-List resources such as tutorials, articles, or documentation that helped you during the project.
-
-- [Java Programming Tutorial](https://www.example.com)
-- [Effective Java](https://www.example.com)
 
 ## Team Members
 
-- **Name 1** - Specific contributions or roles.
-- **Name 2** - Specific contributions or roles.
+-Oumou Diallo
 
 ## Thanks
 
 Express gratitude towards those who provided help, guidance, or resources:
 
-- Thank you to [Mentor's Name] for continuous support and guidance.
+- Thank you to Raymon for continuous support and guidance.
 - A special thanks to all teammates for their dedication and teamwork.
  
