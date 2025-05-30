@@ -98,18 +98,8 @@ public class Sandwich {
     @Override
     public String toString() {
         return String.format(
-                "=== RECEIPT ===\n" +
-                "bread:  %s\n" +
-                "size: %s\n" +
-                " isToasted: %s\n" +
-                "extraCheese: %s\n" +
-                "extraMeat: %s\n" +
-                "toppings: %s\n" +
-                "===============",
-                toppings, bread, size,
-                isToasted ? "Y" : "N",
-                extraCheese ? "Y" : "N",
-                extraMeat ? "Y" : "N");
-
+                "%s sandwich (Size: %d\", Toasted: %s, Toppings: %s)",
+                bread, size, isToasted ? "Yes" : "No", toppings
+        );
     }
 }

@@ -68,7 +68,20 @@ public class Order {
         orderFileManager.saveOrderToFile(order.toString());
     }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
 
+        // Add sandwiches
+        if (!sandwiches.isEmpty()) {
+            sb.append("Sandwiches:\n");
+            sandwiches.forEach(s -> sb.append("- ").append(s).append("\n"));
+        }
 
+        // Add drinks and chips (similar logic)
 
+        // Add total price
+        sb.append(String.format("Total: $%.2f", getTotalPrice()));
+        return sb.toString();
+    }
 }

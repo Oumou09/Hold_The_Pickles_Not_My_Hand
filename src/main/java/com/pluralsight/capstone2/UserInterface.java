@@ -158,7 +158,6 @@ public class UserInterface {
     public double processAddDrinkRequest(){
         System.out.println("Would you like a drink?(Coca Cola, Sprite, Dr.Pepper, Fanta, and Dasani Water)");
         String drinkType = scanner.nextLine().toUpperCase();
-        System.out.println("What size drink would you like? (SMALL), (MEDIUM), (LARGE)");
         String size = scanner.nextLine().toUpperCase();
 
         while (true) {
@@ -185,33 +184,31 @@ public class UserInterface {
 
     }
     public void processCheckoutRequest(){
-        System.out.println("Confirm checkout: (y/n)");
-        String confirm = scanner.nextLine();
-        if (!confirm.equalsIgnoreCase("y"))
+        System.out.print("Confirm checkout (y/n): ");
+        if (!scanner.nextLine().equalsIgnoreCase("y")) {
+            System.out.println("Checkout cancelled.");
             return;
+        }
 
-        System.out.println("=== Your Order ===");
-        currentOrder.getSandwiches().forEach(System.out::println);
-        currentOrder.getDrinks().forEach(System.out::println);
-        currentOrder.getChips().forEach(System.out::println);
+        // 2. Print order summary (formatted via Order.toString())
+        System.out.println("\n=== YOUR ORDER ===");
+        System.out.println(currentOrder);  // This already includes the total price!
+        System.out.println("=================");
 
-        double totalPrice = currentOrder.getTotalPrice(); // Delegate to Order class
-        System.out.printf("Total: $%.2f%n", totalPrice);
-        System.out.println("Thank you!");
-
-
-
+        // 3. Thank-you message
+        System.out.println("\nThank you for your order!");
     }
+
 
 
 
     public void processCancelOrderRequest(){
     Scanner scanner = new Scanner(System.in);
-        System.out.println("Are you sure you want to cancel your order? (yes/no)");
+        System.out.println("Are you sure you want to cancel your order? (y/n)");
         String answer = scanner.nextLine().toLowerCase();
 
         // Step 2: Check the answer
-        if (answer.equals("yes")) {
+        if (answer.equals("y")) {
             // Reset the order
             currentOrder = new Order();
             System.out.println("Your order has been cancelled. See you next time!");
@@ -219,9 +216,6 @@ public class UserInterface {
             System.out.println("Order not cancelled. Returning to menu...");
         }
     }
-
-
-
 
 
 
