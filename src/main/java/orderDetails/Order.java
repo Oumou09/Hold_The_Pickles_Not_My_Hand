@@ -72,15 +72,21 @@ public class Order {
     public String toString() {
         StringBuilder sb = new StringBuilder();
 
-        // Add sandwiches
         if (!sandwiches.isEmpty()) {
             sb.append("Sandwiches:\n");
             sandwiches.forEach(s -> sb.append("- ").append(s).append("\n"));
         }
+        if (!drinks.isEmpty()) {
+            sb.append("\n=== DRINKS ===\n");
+            drinks.forEach(drink -> sb.append("- ").append(drink).append("\n"));
+        }
 
-        // Add drinks and chips (similar logic)
+        if (!chips.isEmpty()) {
+            sb.append("\n=== CHIPS ===\n");
+            chips.forEach(chip -> sb.append("- ").append(chip).append("\n"));
+        }
 
-        // Add total price
+        sb.append("\n=== TOTAL ===\n");
         sb.append(String.format("Total: $%.2f", getTotalPrice()));
         return sb.toString();
     }
