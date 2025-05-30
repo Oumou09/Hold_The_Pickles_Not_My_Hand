@@ -16,6 +16,6 @@ public class Vegetable extends Topping {
 
     @Override
     public String toString() {
-        return "Vegetable: " + getName();
+        return  getName();
     }
 }

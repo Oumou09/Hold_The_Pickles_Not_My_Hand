@@ -1,0 +1,10 @@
+=== ORDER RECEIPT ===
+Sandwiches:
+  - WRAP sandwich (Size: 4", Toasted: Yes, Toppings: [Meat: Chicken, SWISS, CUCUMBERS, RANCH, Meat: Extra Meat, Extra Cheese])
+Drinks:
+  - DASANI WATER,SMALL
+Chips:
+  - Cheetos'
+-----------------------
+Total Price: $9.00
+Thank you for your order!

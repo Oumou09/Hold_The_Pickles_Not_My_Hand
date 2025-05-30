@@ -13,11 +13,6 @@ public class UserInterface {
     private Scanner scanner = new Scanner(System.in);
     private Order currentOrder;
 
-    private OrderFileManager orderFileManager;
-
-    public UserInterface(OrderFileManager orderFileManager) {
-        this.orderFileManager = orderFileManager;
-    }
 
     public void homeScreen() {
         boolean running = true;
@@ -77,6 +72,15 @@ public class UserInterface {
             }
         }
 
+        boolean ordering = true;
+        while (ordering) {
+            boolean checkoutSelected = false;
+            if (checkoutSelected) {
+                processCheckoutRequest();
+
+            }
+        }
+
     }
 
     public void processAddSandwichRequest(){
@@ -89,7 +93,7 @@ public class UserInterface {
         System.out.println("Do you want it toasted?(y/n)");
         boolean isToasted = scanner.nextLine().equalsIgnoreCase("y");
 
-        System.out.println("Choose what type of meat you would like on your sandwich? (choose between 1(steak), 2(Ham), 3(Salami), 4(Roast Beef), 5(Chicken) and 6(Bacon)");
+        System.out.println("Choose what type of meat you would like on your sandwich? (choose a number 1(steak), 2(Ham), 3(Salami), 4(Roast Beef), 5(Chicken) and 6(Bacon)");
         String meatChoice = scanner.nextLine();
         Meat meatType = null;
 
@@ -118,7 +122,7 @@ public class UserInterface {
                 System.out.println("Invalid choice. Please try again.");
 
         }
-        System.out.println(" What type of cheese would you like on your sandwich? (American, Provolone, Cheddar, and Swiss)");
+        System.out.println("What type of cheese would you like on your sandwich? (American, Provolone, Cheddar, and Swiss)");
         String cheeseType = scanner.nextLine().toUpperCase();
         Cheese cheese = new Cheese(cheeseType);
 
@@ -153,13 +157,16 @@ public class UserInterface {
             newSandwich1.addTopping(extraCheese);
         }
 
+        OrderFileManager orderFileManager = new OrderFileManager();
+        orderFileManager.writeOrderToFile(currentOrder.toString());
+
+
     }
 
     public double processAddDrinkRequest(){
         System.out.println("Would you like a drink?(Coca Cola, Sprite, Dr.Pepper, Fanta, and Dasani Water)");
         String drinkType = scanner.nextLine().toUpperCase();
         String size = scanner.nextLine().toUpperCase();
-
         while (true) {
             System.out.println("What size drink would you like? (SMALL, MEDIUM, LARGE)");
             size = scanner.nextLine().toUpperCase();
@@ -190,13 +197,28 @@ public class UserInterface {
             return;
         }
 
-        // 2. Print order summary (formatted via Order.toString())
         System.out.println("\n=== YOUR ORDER ===");
-        System.out.println(currentOrder);  // This already includes the total price!
+        System.out.println(currentOrder);
         System.out.println("=================");
 
-        // 3. Thank-you message
         System.out.println("\nThank you for your order!");
+
+        OrderFileManager orderFileManager = new OrderFileManager();
+        orderFileManager.saveOrderToFile(currentOrder.toString());
+
+
+//        System.out.println("Would you like to place another order (y/n)");
+//        String answer = scanner.nextLine().toLowerCase();
+
+//        if (answer.equals("n")) {
+//            currentOrder = new Order();
+//            System.out.println("Your order has been cancelled. See you next time!");
+//        } else {
+//            System.out.println("Sucks to see you go. Enjoy your day! Returning to menu...");
+//        }
+
+//       scanner.close();
+//       orderScreen();
     }
 
 
@@ -207,9 +229,7 @@ public class UserInterface {
         System.out.println("Are you sure you want to cancel your order? (y/n)");
         String answer = scanner.nextLine().toLowerCase();
 
-        // Step 2: Check the answer
         if (answer.equals("y")) {
-            // Reset the order
             currentOrder = new Order();
             System.out.println("Your order has been cancelled. See you next time!");
         } else {

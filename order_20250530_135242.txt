@@ -1,0 +1,8 @@
+Sandwiches:
+- WHITE sandwich (Size: 4", Toasted: Yes, Toppings: [Meat: Steak, Cheese: AMERICAN, Vegetable: LETTUCE, Condiment: MAYO, Meat: Extra Meat, Cheese: Extra Cheese])
+
+=== DRINKS ===
+- Drink: SPRITE,Size: SMALL
+
+=== TOTAL ===
+Total: $7.50

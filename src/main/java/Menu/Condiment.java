@@ -17,6 +17,6 @@ public class Condiment extends Topping {
 
     @Override
     public String toString() {
-        return "Condiment: " + getName();
+        return getName();
     }
 }

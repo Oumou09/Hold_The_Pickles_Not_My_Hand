@@ -17,7 +17,7 @@ public class Chips {
 
     @Override
     public String toString() {
-        return "Chips: " + type + '\'';
+        return  type + '\'';
     }
 
     public double getPrice(){

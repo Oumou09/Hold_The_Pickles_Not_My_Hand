@@ -1,0 +1,10 @@
+=== ORDER RECEIPT ===
+Sandwiches:
+  - WHITE sandwich (Size: 8", Toasted: Yes, Toppings: [Meat: Steak, CHEDDAR, LETTUCE, MAYA, Extra Cheese])
+Drinks:
+  - COCA COLA,LARGE
+Chips:
+  - Cheetos'
+-----------------------
+Total Price: $11.50
+Thank you for your order!

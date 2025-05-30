@@ -1,7 +1,5 @@
 package orderDetails;
 
-import Receipts.Receipt;
-
 import java.io.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -11,10 +9,11 @@ public class OrderFileManager {
         Scanner scanner = new Scanner(System.in);
 
 
-        public void writeOrderToFile(String filename, String sandwichOrder) {
+        public void writeOrderToFile(String string) {
                 String timestamp = LocalDateTime.now()
                         .format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"));
-                filename = "order_" + timestamp + ".txt";
+                String filename = "order_" + timestamp + ".txt";
+                String sandwichOrder = "";
                 try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
                         writer.write(sandwichOrder);
                         writer.newLine();  // Add a newline for separation if writing multiple orders

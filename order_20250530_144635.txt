@@ -1,0 +1,8 @@
+=== ORDER RECEIPT ===
+Drinks:
+  - DASANI WATER,LARGE
+Chips:
+  - Doritos nacho'
+-----------------------
+Total Price: $4.50
+Thank you for your order!

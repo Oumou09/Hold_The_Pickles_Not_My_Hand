@@ -1,0 +1,11 @@
+Sandwiches:
+- WHITE sandwich (Size: 8", Toasted: Yes, Toppings: [Meat: Ham, Cheese: PROVOLONE, CUCUMBERS, Condiment: MAYO, Meat: Extra Meat, Cheese: Extra Cheese])
+
+=== DRINKS ===
+- COCA COLASMALL
+
+=== CHIPS ===
+- Doritos Nacho'
+
+=== TOTAL ===
+Total: $10.50

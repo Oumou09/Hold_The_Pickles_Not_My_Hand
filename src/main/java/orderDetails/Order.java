@@ -70,24 +70,35 @@ public class Order {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
+        StringBuilder receipt = new StringBuilder();
+        receipt.append("=== ORDER RECEIPT ===\n");
 
         if (!sandwiches.isEmpty()) {
-            sb.append("Sandwiches:\n");
-            sandwiches.forEach(s -> sb.append("- ").append(s).append("\n"));
+            receipt.append("Sandwiches:\n");
+            for (Sandwich sandwich : sandwiches) {
+                receipt.append("  - ").append(sandwich.toString()).append("\n");
+            }
         }
+
         if (!drinks.isEmpty()) {
-            sb.append("\n=== DRINKS ===\n");
-            drinks.forEach(drink -> sb.append("- ").append(drink).append("\n"));
+            receipt.append("Drinks:\n");
+            for (Drink drink : drinks) {
+                receipt.append("  - ").append(drink.toString()).append("\n");
+            }
         }
 
         if (!chips.isEmpty()) {
-            sb.append("\n=== CHIPS ===\n");
-            chips.forEach(chip -> sb.append("- ").append(chip).append("\n"));
+            receipt.append("Chips:\n");
+            for (Chips chip : chips) {
+                receipt.append("  - ").append(chip.toString()).append("\n");
+            }
         }
 
-        sb.append("\n=== TOTAL ===\n");
-        sb.append(String.format("Total: $%.2f", getTotalPrice()));
-        return sb.toString();
+        receipt.append("-----------------------\n");
+        receipt.append(String.format("Total Price: $%.2f\n", getTotalPrice()));
+        receipt.append("Thank you for your order!\n");
+
+        return receipt.toString();
     }
+
 }

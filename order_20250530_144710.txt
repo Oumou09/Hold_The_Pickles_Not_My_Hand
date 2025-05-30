@@ -1,0 +1,6 @@
+=== ORDER RECEIPT ===
+Chips:
+  - Original Lays'
+-----------------------
+Total Price: $1.50
+Thank you for your order!

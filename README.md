@@ -54,7 +54,6 @@ Writing the Order Receipt to a New File Each Time
 
 One of the trickiest parts of this project was implementing the logic that writes the receipt for each order into a uniquely named file every time the customer completes their order.
 Why It Was Difficult:
-
 The receipt file needed a unique name to prevent overwriting previous receipts.
 This required generating a timestamp at the exact moment the receipt is saved.
 Managing file creation and handling potential I/O errors gracefully was a challenge.
