@@ -56,13 +56,13 @@ public class UserInterface {
                 case "1":
                     processAddSandwichRequest();
                     break;
-                case "2":
+                case "2":processAddDrinkRequest();
                     break;
-                case "3":
+                case "3":processAddChipRequest();
                     break;
-                case "4":
+                case "4":processCheckoutRequest();
                     break;
-                case "0":
+                case "0":processCancelOrderRequest();
                     running = false;
                     return;
                 default:
@@ -158,15 +158,38 @@ public class UserInterface {
     }
     public double processAddChipRequest(){
         System.out.println("Would you like a s chip as well? (Original Lays, Takis Lime , Cheetos, Doritos Nacho ");
-        Chips chipType = new Chips("");
-        currentOrder.addChips(chipType);
+        String chipType =  scanner.nextLine();
+        Chips chip = new Chips(chipType);
+        currentOrder.addChips(chip);
         return 1.50;
 
     }
     public void processCheckoutRequest(){
+        System.out.println("Thank you for the order! Here's what you got.");
+        double totalPrice = 0;
+        for(Sandwich sandwich : currentOrder.getSandwiches()){
+            System.out.println(sandwich);
+           totalPrice += sandwich.calculatedPrice();
+
+        }
+        for (Drink drink : currentOrder.getDrinks()){
+            System.out.println(drink);
+            totalPrice += drink.getPrice();
+        }
+        for (Chips chip : currentOrder.getChips()){
+            System.out.println(chip);
+            totalPrice += chip.getPrice();
+        }
+
+        System.out.println("Your total is: $" + totalPrice);
+        System.out.println("Enjoy your meal! Come again soon!");
 
     }
     public void processCancelOrderRequest(){
+        System.out.println("Your order has been cancelled. See you next time!");
+        currentOrder = new Order();
+
+
 
     }
 

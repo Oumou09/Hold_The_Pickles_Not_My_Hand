@@ -10,5 +10,25 @@ public class OrderFileManager {
         Scanner scanner = new Scanner(System.in);
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        public saveOrderReceipt(){
+
+        }
+
 }
 

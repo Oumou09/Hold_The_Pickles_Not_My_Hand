@@ -32,8 +32,10 @@ public class Drink {
         return 0;
     }
 
-
-
-
-
+    @Override
+    public String toString() {
+        return "Drink" +
+                "name='" + name + '\'' +
+                ", size='" + size + '\'';
+    }
 }
