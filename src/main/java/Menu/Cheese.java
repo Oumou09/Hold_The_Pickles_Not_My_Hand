@@ -12,5 +12,8 @@ public class Cheese extends Topping {
         return 0;
     }
 
-
+    @Override
+    public String toString() {
+        return "Cheese " + getName() ;
+    }
 }

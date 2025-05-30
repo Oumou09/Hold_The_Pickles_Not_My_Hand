@@ -10,6 +10,11 @@ public class Meat extends Topping {
     @Override
     public double getPrice(int size) {
         return 0;
+
     }
 
+    @Override
+    public String toString() {
+        return "Meat " + getName();
+    }
 }

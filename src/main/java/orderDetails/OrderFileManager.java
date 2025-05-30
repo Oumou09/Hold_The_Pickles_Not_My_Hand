@@ -8,7 +8,6 @@ import java.util.Scanner;
 
 public class OrderFileManager {
         Scanner scanner = new Scanner(System.in);
-        scanner.nextLine():
 
 
 }

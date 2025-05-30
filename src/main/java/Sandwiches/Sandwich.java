@@ -14,11 +14,11 @@ public class Sandwich {
     private List<Topping> toppings;
 
 
-    public Sandwich(String bread, int size, boolean isToasted, String cheeseType, String vegiType, String condimentType) {
+    public Sandwich(String bread, int size, boolean isToasted) {
         this.bread = bread;
         this.size = size;
         this.isToasted = isToasted;
-        this.toppings = new ArrayList<>();
+        this.toppings = new ArrayList<Topping>();
     }
 
     public String getBread() {
@@ -74,13 +74,12 @@ public class Sandwich {
 
     @Override
     public String toString() {
-        return "Sandwich{" +
+        return "Sandwich" +
                 "bread='" + bread + '\'' +
                 ", size=" + size +
                 ", isToasted=" + isToasted +
                 ", extraCheese=" + extraCheese +
                 ", extraMeat=" + extraMeat +
-                ", toppings=" + toppings +
-                '}';
+                ", toppings=" + toppings;
     }
 }
