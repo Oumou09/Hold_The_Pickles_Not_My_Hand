@@ -14,12 +14,10 @@ public class Sandwich {
     private List<Topping> toppings;
 
 
-    public Sandwich(String bread, int size, boolean isToasted, boolean extraCheese, boolean extraMeat) {
+    public Sandwich(String bread, int size, boolean isToasted, String cheeseType, String vegiType, String condimentType) {
         this.bread = bread;
         this.size = size;
         this.isToasted = isToasted;
-        this.extraCheese = extraCheese;
-        this.extraMeat = extraMeat;
         this.toppings = new ArrayList<>();
     }
 
@@ -65,11 +63,11 @@ public class Sandwich {
 
 
     public double calculatedPrice(){
-        return calculatedPrice();
+        return 0;
 
     }
 
-    public static void addTopping(Topping topping){
+    public void addTopping(Topping topping){
         toppings.add(topping);
     }
 
