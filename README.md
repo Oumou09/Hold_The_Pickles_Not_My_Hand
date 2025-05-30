@@ -49,6 +49,17 @@ Java Streams API: For processing lists (e.g., calculating totals).
 File I/O: For saving receipts and orders.
 Scanner: For reading user input.
 
+Most Difficult Piece of Code
+Writing the Order Receipt to a New File Each Time
+
+One of the trickiest parts of this project was implementing the logic that writes the receipt for each order into a uniquely named file every time the customer completes their order.
+Why It Was Difficult:
+
+The receipt file needed a unique name to prevent overwriting previous receipts.
+This required generating a timestamp at the exact moment the receipt is saved.
+Managing file creation and handling potential I/O errors gracefully was a challenge.
+Ensuring that the file closes properly even if an exception occurs (to avoid file corruption) added complexity.
+Initially, mixing file naming logic with order data caused confusion—eventually, it was separated for better maintainability.
 
 Future Work
 Additional Features:
