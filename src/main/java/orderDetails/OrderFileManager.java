@@ -1,5 +1,7 @@
 package orderDetails;
 
+import Receipts.Receipt;
+
 import java.io.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -13,7 +15,7 @@ public class OrderFileManager {
                 String timestamp = LocalDateTime.now()
                         .format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"));
                 filename = "order_" + timestamp + ".txt";
-                try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename, true))) {
+                try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
                         writer.write(sandwichOrder);
                         writer.newLine();  // Add a newline for separation if writing multiple orders
                         System.out.println("Order successfully written to file!");
@@ -26,35 +28,24 @@ public class OrderFileManager {
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        public <Receipt> void saveOrderReceipt(Receipt receipt){
+        public static void saveOrderToFile(String orderData) {
                 String timestamp = LocalDateTime.now()
                         .format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"));
-                Object currentOrder = new Object();
-                String filename = new StringBuilder().append("receipt_").append(currentOrder.getOrder()).append("_").append(timestamp).append(".txt").toString();
+                String filename = "order_" + timestamp + ".txt";
 
                 try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
-                        writer.write(receipt.toString());
-                        System.out.println("Receipt saved: " + filename);
+                        writer.write(orderData);
+                        System.out.println("Order saved as: " + filename);
                 } catch (IOException e) {
-                        System.err.println("Error saving receipt: " + e.getMessage());
+                        System.err.println("Error saving order: " + e.getMessage());
                 }
-        }
+
+
 
         }
+
+}
+
 
 
 

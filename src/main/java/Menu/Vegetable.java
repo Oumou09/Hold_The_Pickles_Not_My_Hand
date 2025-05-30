@@ -10,6 +10,12 @@ public class Vegetable extends Topping {
 
     @Override
     public double getPrice(int size) {
+
         return 0;
+    }
+
+    @Override
+    public String toString() {
+        return "Vegetable: " + getName();
     }
 }

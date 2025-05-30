@@ -1,19 +1,23 @@
 package com.pluralsight.capstone2;
 
-import Menu.Cheese;
-import Menu.Condiment;
-import Menu.Vegetable;
+import Menu.*;
 import Sandwiches.Chips;
 import Sandwiches.Drink;
 import orderDetails.Order;
 import Sandwiches.Sandwich;
-import Menu.Meat;
+import orderDetails.OrderFileManager;
 
 import java.util.Scanner;
 
 public class UserInterface {
     private Scanner scanner = new Scanner(System.in);
     private Order currentOrder;
+
+    private OrderFileManager orderFileManager;
+
+    public UserInterface(OrderFileManager orderFileManager) {
+        this.orderFileManager = orderFileManager;
+    }
 
     public void homeScreen() {
         boolean running = true;
@@ -133,27 +137,43 @@ public class UserInterface {
         newSandwich1.addTopping(veggie);
         newSandwich1.addTopping(condiment);
         currentOrder.addSandwich(newSandwich1);
+
+
+        System.out.print("Do you want extra meat? (y/n): ");
+        String wantsExtraMeat = scanner.nextLine().trim().toLowerCase();
+        if (wantsExtraMeat.equals("y")) {
+            Topping extraMeat = new Meat("Extra Meat");
+            newSandwich1.addTopping(extraMeat);
+        }
+
+        System.out.print("Do you want extra cheese? (y/n): ");
+        String wantsExtraCheese = scanner.nextLine().trim().toLowerCase();
+        if (wantsExtraCheese.equals("y")) {
+            Topping extraCheese = new Cheese("Extra Cheese");
+            newSandwich1.addTopping(extraCheese);
+        }
+
     }
 
     public double processAddDrinkRequest(){
         System.out.println("Would you like a drink?(Coca Cola, Sprite, Dr.Pepper, Fanta, and Dasani Water)");
         String drinkType = scanner.nextLine().toUpperCase();
-        System.out.println("What size drink would you like? (S), (M), (L)");
-        String size =scanner.nextLine();
-        Drink drink = new Drink(drinkType,size);
-        if(size.equalsIgnoreCase("S")){
-            currentOrder.addDrink(drink);
-            return 2.00;
-        }else if(size.equalsIgnoreCase("M")){
-            currentOrder.addDrink(drink);
-            return 2.50;
-        } else if (size.equalsIgnoreCase("L")){
-            currentOrder.addDrink(drink);
-            return 3.00;
-        }else {
-            System.out.println("Error Invalid input");
-            return 0;
+        System.out.println("What size drink would you like? (SMALL), (MEDIUM), (LARGE)");
+        String size = scanner.nextLine().toUpperCase();
+
+        while (true) {
+            System.out.println("What size drink would you like? (SMALL, MEDIUM, LARGE)");
+            size = scanner.nextLine().toUpperCase();
+            if (size.equals("SMALL") || size.equals("MEDIUM") || size.equals("LARGE")) {
+                break;
+            }
+            System.out.println("Invalid size. Please try again.");
         }
+
+            Drink drink = new Drink(drinkType, size);
+            currentOrder.addDrink(drink);
+            return drink.getPrice();
+
 
     }
     public double processAddChipRequest(){
@@ -178,6 +198,9 @@ public class UserInterface {
         double totalPrice = currentOrder.getTotalPrice(); // Delegate to Order class
         System.out.printf("Total: $%.2f%n", totalPrice);
         System.out.println("Thank you!");
+
+
+
     }
 
 

@@ -8,7 +8,6 @@ import java.util.List;
 import static apple.laf.JRSUIConstants.Size.LARGE;
 import static java.text.DateFormat.MEDIUM;
 import static jdk.internal.icu.util.CodePointTrie.Type.SMALL;
-import static jdk.internal.jrtfs.JrtFileAttributeView.AttrID.size;
 
 public class Sandwich {
     private String bread;
@@ -25,6 +24,11 @@ public class Sandwich {
         this.isToasted = isToasted;
         this.toppings = new ArrayList<Topping>();
     }
+
+    public static final int SMALL = 4;
+    public static final int MEDIUM = 8;
+    public static final int LARGE = 12;
+
 
     public String getBread() {
         return bread;

@@ -13,12 +13,13 @@ public class Meat extends Topping {
 
     }
 
+
     @Override
     public double getPrice(int size) {
         Scanner scanner = new Scanner(System.in);
-       double  basePrice = 0;
         System.out.println("Would you like extra? (y/n) ");
         String wantsCheese = scanner.nextLine().trim().toLowerCase();
+       double  basePrice = 0;
         switch (size) {
             case 4:
                 basePrice = 1.00;
@@ -53,6 +54,6 @@ public class Meat extends Topping {
 
     @Override
     public String toString() {
-        return "Meat " + getName();
+        return "Meat: " + getName();
     }
 }

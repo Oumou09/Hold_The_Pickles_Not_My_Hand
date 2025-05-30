@@ -60,6 +60,12 @@ public class Order {
         total += chips.stream().mapToDouble(Chips::getPrice).sum();
         return total;
 
+
+    }
+
+    public void processOrder(Order order) {
+        OrderFileManager orderFileManager = new OrderFileManager();
+        orderFileManager.saveOrderToFile(order.toString());
     }
 
 

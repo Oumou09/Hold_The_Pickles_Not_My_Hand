@@ -34,11 +34,11 @@ public class Drink {
 
     public double getPrice(){
         double Price;
-        switch (size) {
+        switch (size.trim().toUpperCase()) {
             case "SMALL":
                 Price = 2.00;
                 break;
-            case" MEDIUM":
+            case"MEDIUM":
                 Price = 2.50;
                 break;
             case "LARGE":
@@ -53,6 +53,6 @@ public class Drink {
 
     @Override
     public String toString() {
-        return "Drink " + name + ",Size" + size;
+        return "Drink: " + name + ",Size: " + size;
     }
 }
