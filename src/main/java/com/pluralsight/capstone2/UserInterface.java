@@ -136,7 +136,7 @@ public class UserInterface {
     }
 
     public double processAddDrinkRequest(){
-        System.out.println("Would you like a drink?(Coca Cola, Sprite, Dr.Pepper, and Fanta)");
+        System.out.println("Would you like a drink?(Coca Cola, Sprite, Dr.Pepper, Fanta, and Dasani Water)");
         String drinkType = scanner.nextLine().toUpperCase();
         System.out.println("What size drink would you like? (S), (M), (L)");
         String size =scanner.nextLine();
@@ -165,41 +165,37 @@ public class UserInterface {
 
     }
     public void processCheckoutRequest(){
-        System.out.println("Thank you for the order! Here's what you got.");
-        double totalPrice = 0;
-        for(Sandwich sandwich : currentOrder.getSandwiches()){
-            System.out.println(sandwich);
-           totalPrice += sandwich.calculatedPrice();
+        System.out.println("Confirm checkout: (y/n)");
+        String confirm = scanner.nextLine();
+        if (!confirm.equalsIgnoreCase("y"))
+            return;
 
-        }
-        for (Drink drink : currentOrder.getDrinks()){
-            System.out.println(drink);
-            totalPrice += drink.getPrice();
-        }
-        for (Chips chip : currentOrder.getChips()){
-            System.out.println(chip);
-            totalPrice += chip.getPrice();
-        }
+        System.out.println("=== Your Order ===");
+        currentOrder.getSandwiches().forEach(System.out::println);
+        currentOrder.getDrinks().forEach(System.out::println);
+        currentOrder.getChips().forEach(System.out::println);
 
-        System.out.println("Your total is: $" + totalPrice);
-        System.out.println("Enjoy your meal! Come again soon!");
-
+        double totalPrice = currentOrder.getTotalPrice(); // Delegate to Order class
+        System.out.printf("Total: $%.2f%n", totalPrice);
+        System.out.println("Thank you!");
     }
+
+
+
     public void processCancelOrderRequest(){
-        System.out.println("Your order has been cancelled. See you next time!");
-        currentOrder = new Order();
+    Scanner scanner = new Scanner(System.in);
+        System.out.println("Are you sure you want to cancel your order? (yes/no)");
+        String answer = scanner.nextLine().toLowerCase();
 
-
-
+        // Step 2: Check the answer
+        if (answer.equals("yes")) {
+            // Reset the order
+            currentOrder = new Order();
+            System.out.println("Your order has been cancelled. See you next time!");
+        } else {
+            System.out.println("Order not cancelled. Returning to menu...");
+        }
     }
-
-
-
-
-
-
-
-
 
 
 

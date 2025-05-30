@@ -48,7 +48,18 @@ public class Order {
     }
 
     public void addChips(Chips chip){
+
         chips.add(chip);
+    }
+
+
+    public double getTotalPrice(){
+        double total = 0.0;
+        total += sandwiches.stream().mapToDouble(Sandwich::calculatedPrice).sum();
+        total += drinks.stream().mapToDouble(Drink::getPrice).sum();
+        total += chips.stream().mapToDouble(Chips::getPrice).sum();
+        return total;
+
     }
 
 

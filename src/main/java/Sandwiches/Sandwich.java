@@ -5,6 +5,11 @@ import Menu.Topping;
 import java.util.ArrayList;
 import java.util.List;
 
+import static apple.laf.JRSUIConstants.Size.LARGE;
+import static java.text.DateFormat.MEDIUM;
+import static jdk.internal.icu.util.CodePointTrie.Type.SMALL;
+import static jdk.internal.jrtfs.JrtFileAttributeView.AttrID.size;
+
 public class Sandwich {
     private String bread;
     private int size;
@@ -62,9 +67,23 @@ public class Sandwich {
     }
 
 
-    public double calculatedPrice(){
-        return 0;
+    public double calculatedPrice() {
+        double basePrice = 0;
+        switch (size) {
+            case SMALL:
+                basePrice = 5.50;
+                break;
+            case MEDIUM:
+                basePrice = 7.00;
+                break;
+            case LARGE:
+                basePrice = 8.50;
+                break;
+            default:
+                throw new IllegalArgumentException("Invalid size: " + size);
 
+        }
+        return basePrice;
     }
 
     public void addTopping(Topping topping){
@@ -74,12 +93,19 @@ public class Sandwich {
 
     @Override
     public String toString() {
-        return "Sandwich" +
-                "bread='" + bread + '\'' +
-                ", size=" + size +
-                ", isToasted=" + isToasted +
-                ", extraCheese=" + extraCheese +
-                ", extraMeat=" + extraMeat +
-                ", toppings=" + toppings;
+        return String.format(
+                "=== RECEIPT ===\n" +
+                "bread:  %s\n" +
+                "size: %s\n" +
+                " isToasted: %s\n" +
+                "extraCheese: %s\n" +
+                "extraMeat: %s\n" +
+                "toppings: %s\n" +
+                "===============",
+                toppings, bread, size,
+                isToasted ? "Y" : "N",
+                extraCheese ? "Y" : "N",
+                extraMeat ? "Y" : "N");
+
     }
 }

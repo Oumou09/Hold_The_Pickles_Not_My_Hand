@@ -1,5 +1,9 @@
 package Sandwiches;
 
+import static apple.laf.JRSUIConstants.Size.LARGE;
+import static java.text.DateFormat.MEDIUM;
+import static javax.swing.text.html.HTML.Tag.SMALL;
+
 public class Drink {
     private String name;
     private String size;
@@ -29,13 +33,26 @@ public class Drink {
 
 
     public double getPrice(){
-        return 0;
+        double Price;
+        switch (size) {
+            case "SMALL":
+                Price = 2.00;
+                break;
+            case" MEDIUM":
+                Price = 2.50;
+                break;
+            case "LARGE":
+                Price = 3.00;
+                break;
+            default:
+                throw new IllegalArgumentException("Invalid size: " + size);
+        }
+
+        return Price;
     }
 
     @Override
     public String toString() {
-        return "Drink" +
-                "name='" + name + '\'' +
-                ", size='" + size + '\'';
+        return "Drink " + name + ",Size" + size;
     }
 }
